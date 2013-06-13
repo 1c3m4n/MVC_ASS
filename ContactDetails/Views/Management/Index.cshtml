@@ -1,0 +1,23 @@
+﻿@using MvcAssignment.Areas.ContactDetails.Models
+@model ContactDetails
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index","Management",FormMethod.Post))
+{
+@Html.EditorFor(m => m)
+@Html.LabelFor(m => m.HomePhone)<br />
+@Html.EditorFor(m => m.HomePhone.CountryCode)
+@Html.EditorFor(m => m.HomePhone.AreaCode)
+@Html.EditorFor(m => m.HomePhone.PhoneNumber)<br />
+@Html.LabelFor(m => m.CellPhone)<br />
+@Html.EditorFor(m => m.CellPhone.CountryCode)
+@Html.EditorFor(m => m.CellPhone.AreaCode)
+@Html.EditorFor(m => m.CellPhone.PhoneNumber)
+@Html.EditorFor(m => m.HomeAddress)
+
+    <input type="submit" value="Create" />
+}
